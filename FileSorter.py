@@ -3,12 +3,9 @@ import shutil
 from tkinter import *
 from tkinter import filedialog
 
-
-
-
 AskPath = Tk()
 AskPath.withdraw()
-mpath = filedialog.askdirectory(title="Select Folder")
+mpath = filedialog.askdirectory(title="Select Folder") # Asking Path of Folder
 AskPath.destroy()
 AskPath.mainloop()
 
@@ -20,12 +17,8 @@ ListExtI = []
 PDFS = []
 x=0
 
-print(ListOFFiles)
-
 for i in ListOFFiles:
     ListOFFileExt.append(os.path.splitext(i)[1])
-
-print(ListOFFileExt)
     
 for ext in ListOFFileExt:
     if(ext.upper() == ".PDF"):
@@ -49,5 +42,3 @@ for ext in ListOFFileExt:
             os.makedirs("OTHER")
         shutil.move(f"{ListOFFiles[x]}",f"OTHER/{ListOFFiles[x]}")
     x+=1
-
-
